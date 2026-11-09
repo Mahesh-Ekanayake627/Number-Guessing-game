@@ -1,8 +1,9 @@
 // console.log("Hello, World!");
 // console.log(Math.floor(Math.random()*10+1))
+document.body.style.zoom = "150%";
 
 let GuessNoArray = [];
-let result="";
+let result = "";
 let guess;
 
 let randomNumber = Math.floor(Math.random() * 10 + 1);
@@ -11,6 +12,7 @@ console.log("Random Number : " + randomNumber);
 function getRandomNumber() {
     if (attempts == 3) {
         Swal.fire("You attempts are Over!");
+        document.getElementById("randomNo").innerHTML=`<h4>${"The random number is : "+randomNumber}</h4>`;
         return;
     } else {
         console.log("Random Number : " + randomNumber);
@@ -35,7 +37,7 @@ function getRandomNumber() {
                     animate__faster
                 ` }
             });
-            result="Wrong"
+            result = "Wrong"
         } else if (guess < randomNumber) {
             Swal.fire({
                 title: "Your guessing is lessthan the random number",
@@ -52,7 +54,7 @@ function getRandomNumber() {
                     animate__faster
                 ` }
             });
-            result="Wrong"
+            result = "Wrong"
         }
         else if (guess == randomNumber) {
             Swal.fire({
@@ -60,41 +62,37 @@ function getRandomNumber() {
                 text: "You clicked the button!",
                 icon: "success"
 
-            }); 
-            result="Correct"
+            });
+            result = "Correct"
         }
         document.getElementById("guessInput").value = ""
         console.log("");
     }
     //let GuessNo=Number(document.getElementById("guessInput").value);
-    
+
     const GuessNolist = {
-        NoofAttempts : attempts,
-        RandomNo : randomNumber,
-        GuessingNo : guess,
-        Result : result
+        NoofAttempts: attempts,
+        RandomNo: randomNumber,
+        GuessingNo: guess,
+        Result: result
     };
     GuessNoArray.push(GuessNolist);
     console.log(GuessNoArray);
     lordhistorytable();
-   
-
 }
-function restartgame(){
+function restartgame() {
     document.getElementById("tblHistoryofGame").querySelector("tbody").innerHTML = "";
-    GuessNoArray.length=0;
+    GuessNoArray.length = 0;
 
     document.getElementById("restart");
-    attempts=0;
+    attempts = 0;
     randomNumber = Math.floor(Math.random() * 10 + 1);
-    console.log("Random Number : "+randomNumber)
-    document.getElementById("guessInput").value = "";  
-    
+    console.log("Random Number : " + randomNumber)
+    document.getElementById("guessInput").value = "";
 }
 
-function lordhistorytable(){
-    
-    let body=`<thead>
+function lordhistorytable() {
+    let body = `<thead>
                 <tr>
                     <th>No of Attempts</th>
                     <th>Guessing No</th>
@@ -102,12 +100,14 @@ function lordhistorytable(){
                 </tr>
             </thead>`
 
-    for(let Numberlist of  GuessNoArray ){
+    for (let Numberlist of GuessNoArray) {
         body += `<tr>
                 <td>${Numberlist.NoofAttempts}</td>
                 <td>${Numberlist.GuessingNo}</td>
                 <td>${Numberlist.Result}</td>
-            </tr>`      
+            </tr>`
     }
-    document.getElementById("tblHistoryofGame").innerHTML=body;
+    document.getElementById("tblHistoryofGame").innerHTML = body;
 }
+
+
