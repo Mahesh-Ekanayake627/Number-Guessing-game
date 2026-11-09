@@ -16,8 +16,15 @@
         <button id="guessButton" onclick="getRandomNumber()">Guess</button>
         <h4>Do you want to restart the Game ? <button id="restart" onclick="restartgame()">Restart</button>
         </h4>
-        <h2>History</h2>
-        
+        <table border="1" id="tblHistoryofGame" width="100%">
+            <caption>Game History</caption>
+                <tr>
+                    <td>No of Attempts</td>
+                    <td>Random No</td>
+                    <td>Guessing No</td>
+                    <td>Result</td>
+                </tr>
+        </table>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="app.js"></script>

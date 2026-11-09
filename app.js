@@ -1,6 +1,8 @@
 // console.log("Hello, World!");
 // console.log(Math.floor(Math.random()*10+1))
 
+let GuessNoArray=[];
+
 let randomNumber = Math.floor(Math.random() * 10 + 1);
 let attempts = 0;
 console.log("Random Number : " + randomNumber);
@@ -31,6 +33,7 @@ function getRandomNumber() {
                     animate__faster
                 ` }
             });
+            let result="Wrong"
         } else if (guess < randomNumber) {
             Swal.fire({
                 title: "Your guessing is lessthan the random number",
@@ -47,19 +50,24 @@ function getRandomNumber() {
                     animate__faster
                 ` }
             });
-
+            let result="Wrong"
         }
         else if (guess == randomNumber) {
             Swal.fire({
                 title: "Correct Guess!",
                 text: "You clicked the button!",
                 icon: "success"
-            });
+
+            }); 
         }
+        let result="Correct"
         document.getElementById("guessInput").value = ""
         console.log("");
     }
-    //lordhistorytable();
+    let GuessNo=document.getElementById("guessInput").value;
+    
+    contst 
+    lordhistorytable();
 
 }
 
@@ -68,5 +76,5 @@ function restartgame(){
     attempts=0;
     randomNumber = Math.floor(Math.random() * 10 + 1);
     console.log("Random Number : "+randomNumber)
-    document.getElementById("guessInput").value = ""
+    document.getElementById("guessInput").value = "";  
 }
