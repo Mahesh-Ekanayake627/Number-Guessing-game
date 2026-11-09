@@ -3,7 +3,7 @@
 
 let randomNumber = Math.floor(Math.random() * 10 + 1);
 let attempts = 0;
- console.log("Random Number : " + randomNumber);
+console.log("Random Number : " + randomNumber);
 function getRandomNumber() {
     if (attempts == 3) {
         Swal.fire("You attempts are Over!");
@@ -60,6 +60,13 @@ function getRandomNumber() {
         console.log("");
     }
     //lordhistorytable();
+
 }
 
-//function 
+function restartgame(){
+    document.getElementById("restart");
+    attempts=0;
+    randomNumber = Math.floor(Math.random() * 10 + 1);
+    console.log("Random Number : "+randomNumber)
+    document.getElementById("guessInput").value = ""
+}
