@@ -12,12 +12,14 @@ console.log("Random Number : " + randomNumber);
 function getRandomNumber() {
     if (attempts == 3) {
         Swal.fire("You attempts are Over!");
-        document.getElementById("randomNo").innerHTML=`<h4>${"The random number is : "+randomNumber}</h4>`;
         return;
     } else {
+        attempts++;    
+        if(attempts == 3){
+            document.getElementById("randomNo").innerHTML=`<h3>${"The random number is : "+randomNumber}</h3>`;
+        }
         console.log("Random Number : " + randomNumber);
         guess = Number(document.getElementById("guessInput").value);
-        attempts++;
         console.log("Your Guess : " + guess);
         console.log("Attempts : " + attempts);
 
@@ -80,7 +82,9 @@ function getRandomNumber() {
     console.log(GuessNoArray);
     lordhistorytable();
 }
+
 function restartgame() {
+    document.getElementById("randomNo").innerHTML="";
     document.getElementById("tblHistoryofGame").querySelector("tbody").innerHTML = "";
     GuessNoArray.length = 0;
 
@@ -92,6 +96,7 @@ function restartgame() {
 }
 
 function lordhistorytable() {
+    
     let body = `<thead>
                 <tr>
                     <th>No of Attempts</th>
@@ -108,6 +113,7 @@ function lordhistorytable() {
             </tr>`
     }
     document.getElementById("tblHistoryofGame").innerHTML = body;
+    
 }
 
 
