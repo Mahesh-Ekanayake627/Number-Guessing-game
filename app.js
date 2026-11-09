@@ -90,15 +90,13 @@ function restartgame(){
 function lordhistorytable(){
     let body=`<tr>
                 <th>No of Attempts</th>
-                <th>Random No</th>
                 <th>Guessing No</th>
                 <th>Result</th>
-                </tr>`
+            </tr>`
 
     for(let Numberlist of  GuessNoArray ){
         body += `<tr>
                 <td>${Numberlist.NoofAttempts}</td>
-                <td>${Numberlist.RandomNo}</td>
                 <td>${Numberlist.GuessingNo}</td>
                 <td>${Numberlist.Result}</td>
             </tr>`      
