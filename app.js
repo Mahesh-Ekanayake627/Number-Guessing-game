@@ -77,17 +77,23 @@ function getRandomNumber() {
     GuessNoArray.push(GuessNolist);
     console.log(GuessNoArray);
     lordhistorytable();
+   
 
 }
 function restartgame(){
+    document.getElementById("tblHistoryofGame").querySelector("tbody").innerHTML = "";
+    GuessNoArray.length=0;
+
     document.getElementById("restart");
     attempts=0;
     randomNumber = Math.floor(Math.random() * 10 + 1);
     console.log("Random Number : "+randomNumber)
     document.getElementById("guessInput").value = "";  
+    
 }
 
 function lordhistorytable(){
+    
     let body=`<tr>
                 <th>No of Attempts</th>
                 <th>Guessing No</th>
