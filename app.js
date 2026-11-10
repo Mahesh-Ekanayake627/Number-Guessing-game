@@ -1,6 +1,6 @@
 // console.log("Hello, World!");
 // console.log(Math.floor(Math.random()*10+1))
-document.body.style.zoom = "150%";
+document.body.style.zoom = "120%";
 
 let GuessNoArray = [];
 let result = "";
@@ -106,8 +106,8 @@ function lordhistorytable() {
             </thead>`
 
     for (let Numberlist of GuessNoArray) {
-        body += `<tr>
-                <td>${Numberlist.NoofAttempts}</td>
+        body +=`<tr align="Center">
+                <td >${Numberlist.NoofAttempts}</td>
                 <td>${Numberlist.GuessingNo}</td>
                 <td>${Numberlist.Result}</td>
             </tr>`
