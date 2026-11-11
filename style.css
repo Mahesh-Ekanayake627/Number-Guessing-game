@@ -1,7 +1,7 @@
 body{
     background-size: auto;
     background: url(https://png.pngtree.com/thumb_back/fh260/background/20260729/pngtree-kids-math-background-with-cute-numbers-and-shapes-image_22111004.webp);
-    background-size: ;
+    background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
