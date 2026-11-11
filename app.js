@@ -1,7 +1,4 @@
-// console.log("Hello, World!");
-// console.log(Math.floor(Math.random()*10+1))
 document.body.style.zoom = "120%";
-
 //Input check
 let input = document.getElementById("guessInput");
 input.addEventListener("input", function () {
@@ -85,7 +82,6 @@ function getRandomNumber() {
         console.log("");
     }
     //let GuessNo=Number(document.getElementById("guessInput").value);
-
     const GuessNolist = {
         NoofAttempts: attempts,
         RandomNo: randomNumber,
@@ -109,8 +105,6 @@ function restartgame() {
     console.log("Random Number : " + randomNumber)
     document.getElementById("guessInput").value = "";
 }
-
-
 function lordhistorytable() {
 
     let body = `<thead>
